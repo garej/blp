@@ -13,11 +13,13 @@ We keep naming of variables and functions after Nevo's code where apropriate.
 BLP_import folder has .xlsx files with input data structured as in Nevo (1998).
 
 # use
-unpack blp_main.zip in the same folder where blp_import is located.
+unpack BLP_main.zip in the same folder where blp_import is located.
+
 Wolfram Mathematica (v.10+) is required to run blp_main.nb (notebook): https://www.wolfram.com/mathematica/
 
 # references
-Berry, Steven, James Levinsohn & Ariel Pakes (1995) “Automobile Prices in Market Equilibrium,” Econometrica, 63(4): 841-890
+Berry, Steven, James Levinsohn & Ariel Pakes (1995) “Automobile Prices in Market Equilibrium,” Econometrica, 63(4): 841-890.
+
 Nevo, Aviv (2000) "A Practitioner's Guide to Estimation of Random Coefficients Logit Models of Demand," Journal of Economics & Management Strategy 9(4): 513-548.
 
 Matlab code: https://eml.berkeley.edu/~bhhall/e220c/rc_dc_code.htm
