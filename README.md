@@ -5,10 +5,10 @@ This is Wolfram Mathematica version of famous Nevo's Matlab code with toy BLP ex
 
 Mathematica version has several advantages for educational purposes.
 1) code is much shorter, and is kept in one file;
-2) code is immutable, so each step can be studied separately;
-3) optimisation needs no jacobian (aka gradient).
+2) code is immutable, so each step of the algorithm is easear to study separately;
+3) optimization needs no jacobian (aka gradient).
 
-We keep naming of variables and functions after Nevo's code where apropriate.
+We keep naming of variables and functions after Nevo's code where appropriate.
 
 BLP_import folder has .xlsx files with input data structured as in Nevo (1998).
 
