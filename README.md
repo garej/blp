@@ -14,8 +14,8 @@ Detailed explanations of how the BLP model works can be found in [2] and [3].
 # use
 Unpack `BLP_main.nb` from `BLP_main.zip` in the same folder where `blp_import` resides.
 `blp_import` folder has five `.xlsx` files with input data derived from Nevo's code [4].
-Select all cells in the notebook and run </kbd>Shift</kbd> + </kbd>Enter</kbd>.
-Usually optimization take about 90 sec.
+Select all cells in the notebook and run (<kbd>Shift</kbd> + <kbd>Enter</kbd>).
+Usually optimization takes about 90 sec.
 
 # references
 [1] Berry, Steven, James Levinsohn & Ariel Pakes (1995) “Automobile Prices in Market Equilibrium,” Econometrica, 63(4): 841-890.
