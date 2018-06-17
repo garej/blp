@@ -4,7 +4,7 @@ Random coefficients logit model of demand proposed by Berry, Levinsohn and Pakes
 This is Wolfram Mathematica [5] version of famous Nevo's Matlab code [4] with toy BLP example.
 
 Mathematica version has several advantages for educational purposes.
-1) code is much shorter, and is kept in one file;
+1) code is shorter and contains in one file;
 2) code is immutable, so each step of the algorithm is easear to study separately;
 3) optimization needs no jacobian (aka gradient).
 
@@ -12,8 +12,10 @@ We keep naming of variables and functions after Nevo's code where appropriate.
 Detailed explanations of how the BLP model works can be found in [2] and [3].
 
 # use
-Unpack BLP_main.nb from BLP_main.zip in the same folder where blp_import resides.
-`blp_import` folder has five .xlsx files with input data derived from Nevo's code [4].
+Unpack `BLP_main.nb` from `BLP_main.zip` in the same folder where `blp_import` resides.
+`blp_import` folder has five `.xlsx` files with input data derived from Nevo's code [4].
+Select all cells in the notebook and run </kbd>Shift</kbd> + </kbd>Enter</kbd>.
+Usually optimization take about 90 sec.
 
 # references
 [1] Berry, Steven, James Levinsohn & Ariel Pakes (1995) “Automobile Prices in Market Equilibrium,” Econometrica, 63(4): 841-890.
