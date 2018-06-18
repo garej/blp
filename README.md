@@ -22,7 +22,9 @@ Select all cells in the notebook and run <kbd>Shift</kbd> + <kbd>Enter</kbd>.
 
 Put `BLP_kern.wl` in the same folder where `blp_import` resides.
 Run wolframscript from location where it is visible:
+
 `$ wolframscript -file "..your/path/to/BLP_kern.wl" -print`
+
 Usually optimization takes about 90 sec.
 
 # references
