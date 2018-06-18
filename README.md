@@ -12,9 +12,14 @@ We keep naming of variables and functions after Nevo's code where appropriate.
 Detailed explanations of how the BLP model works can be found in [2] and [3].
 
 # use
+**1 way**
 Unpack `BLP_main.nb` from `BLP_main.zip` in the same folder where `blp_import` resides.
 `blp_import` folder has five `.xlsx` files with input data derived from Nevo's code [4].
 Select all cells in the notebook and run (<kbd>Shift</kbd> + <kbd>Enter</kbd>).
+**2  way**
+Put `BLP_kern.wl` in the same folder where `blp_import` resides.
+Run wolframscript from location where it is visible:
+`$ wolframscript -file "..your/path/to/BLP_kern.wl" -print`
 Usually optimization takes about 90 sec.
 
 # references
