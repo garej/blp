@@ -20,10 +20,10 @@ Select all cells in the notebook and run <kbd>Shift</kbd> + <kbd>Enter</kbd>.
 
 **2  way**
 
-Put `BLP_kern.wl` in the same folder where `blp_import` resides.
+Put `nevo_kernel_script.wl` in the same folder where `nevo_csv` resides.
 Run wolframscript from location where it is visible:
 
-`$ wolframscript -file "..your/path/to/BLP_kern.wl" -print`
+`$ wolframscript -file "..your/path/to/nevo_kernel_script.wl" -print`
 
 Usually optimization takes about 90 sec.
 
