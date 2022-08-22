@@ -24,6 +24,7 @@ mvalold = Exp[x1.t];
 
 (* function for contraction mapping *)
 mval[mvalold_,mufunc_]:= Module[{eg, chunks,denom,shares, mktsh},
+
 eg = Exp[mufunc]*Transpose[ConstantArray[mvalold,ns]]; (* mvalold as given *)
 
 chunks = Partition[eg, nbrn]; (* auxiliary chunks of data by markets *)
@@ -40,7 +41,7 @@ Sigma = DiagonalMatrix @ theta2w[[;;,1]];
 Demo = theta2w[[;;,2;;]];
 mufunc = Flatten[Table[ Partition[x2,nbrn][[t]].(Sigma.Partition[v[[t]],ns] + Demo.Partition[demogr[[t]],ns]), {t, 1, nmkt}], {1,2}];
 
-meanval = FixedPoint[mval[#, mufunc]&,mvalold,SameTest->(Max @ Abs[#1-#2]<1.*^-10&)];
+meanval = FixedPoint[mval[#, mufunc]&, mvalold, SameTest->(Max @ Abs[#1-#2] < 1.*^-10&)];
 
 delta = Log[meanval];
 theta1 = Inverse[mid.x1].mid.delta;
@@ -58,10 +59,10 @@ pattern = Table[s[i,j], {i,1,4},{j,1,5}];
 current = theta2w;
 
 theta2 = MapThread[If[#2==0,0,#1]&,{pattern,current},2];
-list = With[{shift = 0.1},Flatten[MapThread[If[#2==0,Nothing,{#1,#2-Abs[#2]shift, #2+Abs[#2]shift}]&,{pattern,current},2],{2,1}]];
+list = With[{shift = 0.1}, Flatten[ MapThread[If[#2==0,Nothing,{#1,#2-Abs[#2]shift, #2+Abs[#2]shift}]&, {pattern,current}, 2], {2,1}]];
 
 (* optimization cycle *)
-NMinimize[target = gmmobjg[theta2],list, Method->"NelderMead",AccuracyGoal->6,PrecisionGoal->6,
+NMinimize[target = gmmobjg[theta2], list, Method->"NelderMead",AccuracyGoal->6,PrecisionGoal->6,
 EvaluationMonitor:>{
-Print @ {target, First @ theta1, First @ theta2}; Print[];
+Print[{target, First @ theta1, First @ theta2}]; Print[];
 }]
