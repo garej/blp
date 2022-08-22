@@ -38,8 +38,7 @@ gmmobjg[theta2_?(MatrixQ[#,NumericQ]&)]:= Block[{theta2w=theta2,Sigma, Demo, muf
 
 Sigma = DiagonalMatrix @ theta2w[[;;,1]];
 Demo = theta2w[[;;,2;;]];
-mufunc = Flatten[Table[
-Partition[x2,nbrn][[t]].(Sigma.Partition[v[[t]],ns]+Demo.Partition[demogr[[t]],ns]), {t, 1, nmkt}],{1,2}];
+mufunc = Flatten[Table[ Partition[x2,nbrn][[t]].(Sigma.Partition[v[[t]],ns] + Demo.Partition[demogr[[t]],ns]), {t, 1, nmkt}], {1,2}];
 
 meanval = FixedPoint[mval[#, mufunc]&,mvalold,SameTest->(Max @ Abs[#1-#2]<1.*^-10&)];
 
@@ -61,6 +60,7 @@ current = theta2w;
 theta2 = MapThread[If[#2==0,0,#1]&,{pattern,current},2];
 list = With[{shift = 0.1},Flatten[MapThread[If[#2==0,Nothing,{#1,#2-Abs[#2]shift, #2+Abs[#2]shift}]&,{pattern,current},2],{2,1}]];
 
+(* optimization cycle *)
 NMinimize[target = gmmobjg[theta2],list, Method->"NelderMead",AccuracyGoal->6,PrecisionGoal->6,
 EvaluationMonitor:>{
 Print @ {target, First @ theta1, First @ theta2}; Print[];
