@@ -6,7 +6,8 @@ This is Wolfram Mathematica [5] version of famous Nevo's Matlab code [4] with to
 Mathematica version has several advantages for educational purposes.
 1) code is shorter and contains in one file;
 2) code is immutable, so each step of the algorithm is easear to study separately;
-3) optimization needs no jacobian (aka gradient).
+3) optimization needs no jacobian (aka gradient);
+4) contraction mapping is a one-liner here (FixedPoint function).
 
 We keep naming of variables and functions after Nevo's code where appropriate.
 Detailed explanations of how the BLP model works can be found in [2] and [3].
