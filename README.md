@@ -1,4 +1,4 @@
-# blp
+# blp nevo
 Random coefficients logit model of demand proposed by Berry, Levinsohn and Pakes (1995) (thus, BLP) [1].
 
 This is Wolfram Mathematica [5] version of famous Nevo's Matlab code [4] with toy BLP example.
@@ -27,6 +27,13 @@ Run wolframscript from location where it is visible:
 `$ wolframscript -file "..your/path/to/nevo_kernel_script.wl" -print`
 
 Usually optimization takes about 90 sec.
+
+# study
+
+`nevo_kernel_script.wl` is a text file with comments. It has 'data', 'model' and 'run' parts that describe the whole logic of model building.
+The code can be copied into ordinary notebook to get intermediate results.
+
+This is the *shortest* code with open internal logic of the BLP model we know about. Without auxiliary culculations it can be express in a less than 30 lines.
 
 # references
 [1] Berry, Steven, James Levinsohn & Ariel Pakes (1995) “Automobile Prices in Market Equilibrium,” Econometrica, 63(4): 841-890.
