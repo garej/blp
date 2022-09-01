@@ -39,7 +39,7 @@ gmmobjg[theta2_?(MatrixQ[#,NumericQ]&)]:= Block[{theta2w=theta2,Sigma, Demo, muf
 
 Sigma = DiagonalMatrix @ theta2w[[;;,1]];
 Demo = theta2w[[;;,2;;]];
-mufunc = Flatten[Table[ Partition[x2,nbrn][[t]].(Sigma.Partition[v[[t]],ns] + Demo.Partition[demogr[[t]],ns]), {t, 1, nmkt}], {1,2}];
+mufunc = Flatten[Table[ Partition[x2,nbrn][[t]].(Sigma.Partition[v[[t]],ns] + Demo.Partition[demogr[[t]],ns]), {t, 1, nmkt}], 1];
 
 meanval = FixedPoint[mval[#, mufunc]&, mvalold, SameTest->(Max @ Abs[#1-#2] < 1.*^-10&)];
 
