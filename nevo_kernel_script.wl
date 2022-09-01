@@ -59,10 +59,10 @@ pattern = Table[s[i,j], {i,1,4},{j,1,5}];
 current = theta2w;
 
 theta2 = MapThread[If[#2==0,0,#1]&,{pattern,current},2];
-list = With[{shift = 0.1}, Flatten[ MapThread[If[#2==0,Nothing,{#1,#2-Abs[#2]shift, #2+Abs[#2]shift}]&, {pattern,current}, 2], {2,1}]];
+list = With[{shift = 0.1}, Flatten[ MapThread[If[#2==0,Nothing,{#1,#2-Abs[#2]shift, #2+Abs[#2]shift}]&, {pattern,current}, 2], 1]];
 
 (* optimization cycle *)
-NMinimize[target = gmmobjg[theta2], list, Method->"NelderMead",AccuracyGoal->6,PrecisionGoal->6,
+NMinimize[target = gmmobjg[theta2], list,
 EvaluationMonitor:>{
 Print[{target, First @ theta1, First @ theta2}]; Print[];
 }]
